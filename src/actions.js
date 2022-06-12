@@ -1,6 +1,6 @@
-export function updateTaskTitle(taskTitle) {
+export function changeTaskTitle(taskTitle) {
   return {
-    type: 'updateTaskTitle',
+    type: 'changeTaskTitle',
     payload: {
       taskTitle,
     },
