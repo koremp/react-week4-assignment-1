@@ -1,21 +1,21 @@
 import { render } from '@testing-library/react';
-import { useSelector } from 'react-redux';
 
-import App from './App';
+import { useSelector } from 'react-redux';
+import ListContainer from './ListContainer';
 
 jest.mock('react-redux');
 
-test('App', () => {
+test('ListContainer', () => {
   useSelector.mockImplementation((selector) => selector({
-    taskTitle: 'New Title',
     tasks: [
       { id: 1, title: 'aaaaa' },
       { id: 2, title: 'bbbbb' },
     ],
   }));
 
-  const { getByText } = render((<App />));
+  const { getByText } = render((
+    <ListContainer />
+  ));
 
   expect(getByText(/aaaaa/)).not.toBeNull();
-  expect(getByText(/bbbbb/)).not.toBeNull();
 });
