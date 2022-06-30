@@ -26,6 +26,4 @@ test('InputContainer', () => {
   fireEvent.click(getByText(/추가/));
 
   expect(dispatch).toBeCalledWith({ type: 'addTask' });
-
-  expect(getByDisplayValue('New Title')).toBeNull();
 });
